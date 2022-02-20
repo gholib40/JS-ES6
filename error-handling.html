@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error Handling</title>
+</head>
+<body>
+
+    <script>
+        class mathUntil{
+            static sum(... value){
+                if (value.length === 0) {
+                    throw new Error("Gak bisa nol harus di isi brader")
+                }
+                let nilai = 0
+                for(const value2 of value){
+                    nilai += value2
+                }
+                return nilai
+            }
+        }
+
+        class nilaiMahasiswa{
+
+            static nilai(value){
+                if (value >= 80) {
+                    return `Nilai Anda A ${value}`
+                } else if(value >= 60){
+                    return `Nilai Anda B ${value}`
+                } else if(value <= 60){
+                    throw new Error("anda goblok")
+                }
+            }
+        }
+
+        try {
+            const hasil = mathUntil.sum()
+            console.info(hasil)
+        } catch (error) {
+        console.error(`Aplikasi error dengan massage : ${error.message}`)            
+        }finally{
+            console.info("Aplikasi Berjalan")
+        }
+
+        {
+            class Counter{
+              constructor(){
+                  this.counter = 1
+            }
+            next(){
+                try{
+                    return this.counter
+                }finally{
+                     this.counter++
+                }
+            }
+        }
+
+            const mamet = new Counter()
+
+            console.info(mamet.next())
+            console.info(mamet.next())
+          
+           
+        }
+    </script>
+    
+</body>
+</html>

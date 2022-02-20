@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor Function</title>
+</head>
+<body>
+    <script>
+        {        
+        function Person(){
+            this.fristName = ""
+            this.lastName = ""
+            this.sayHello = function(name){
+                console.info(`hello ${name} my name is ${this.fristName}`)
+            }
+        }
+
+        const doblank = new Person()
+        doblank.fristName = "doblank"
+        doblank.lastName = "kece"
+        doblank.sayHello("mamet")
+        console.log(doblank)
+
+        const mamet = new Person()
+        mamet.fristName = "mamet"
+        mamet.lastName = "alkatiri"
+        mamet.sayHello("doblank")
+        console.log(mamet)
+    }
+
+    {
+        function Person(fristName,lastName){
+            this.fristName = fristName
+            this.lastName = lastName
+            this.sayHello = function(name){
+                console.info(`Hello ${name} my name is ${this.fristName}`)
+            }
+        }
+
+        const doblank = new Person("Doblank","Kece")
+        doblank.sayHello("Kontol")
+
+        const mamet = new Person("Mamet", "Alkatiri")
+        mamet.sayHello("kontol")
+    }
+        
+    </script>
+    
+</body>
+</html>

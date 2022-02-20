@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getter Setter</title>
+</head>
+<body>
+
+    <script>
+        class Person{
+            constructor(fristName,lastName){
+                this.fristName = fristName
+                this.lastName = lastName
+            }
+
+            get fullName(){
+                return `${this.fristName} ${this.lastName}`
+            }
+            set fullName(value){
+                const mamet = value.split(" ")
+                this.fristName = mamet[0]
+                this.lastName = mamet[1]
+            }
+        }
+
+        const doblank = new Person("Adam","Galib")
+        console.info(doblank)
+        console.info(doblank.fullName)
+
+
+        doblank.fullName = "mamet STM"
+        console.info(doblank)
+    </script>
+    
+</body>
+</html>

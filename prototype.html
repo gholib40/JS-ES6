@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype</title>
+</head>
+<body>
+    <script>
+        function Person(fristName,lastName){
+            this.fristName = fristName
+            this.lastName = lastName
+            this.namaLengkap = this.fristName + this.lastName
+            this.sayHello = function(name){
+                console.info(`Hello ${name} my name is ${this.namaLengkap}`)
+            }
+        }
+
+        // const doblank = new Person("Adam","Galib")
+        // console.info(doblank)
+        // doblank.sayHello("mamet")
+        Person.prototype.sayBye = function(){
+            console.info(`goodbye`)
+        }
+
+        Person.prototype.running = function(){
+            console.info(`${this.namaLengkap} is running`)
+        }
+
+        const doblank = new Person("adam","galib")
+        console.info(doblank)
+        const mamet = new Person("Mamet ", "Alkatiri")
+        console.info(mamet)
+        doblank.sayBye()
+        doblank.running()
+    </script>
+</body>
+</html>
